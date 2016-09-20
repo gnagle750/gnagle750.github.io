@@ -23,7 +23,7 @@
   var w = canvas.width = window.innerWidth;
   var h = canvas.height = window.innerHeight;
 
-  var numParticles = 300,
+  var numParticles = 50,
       particles = [],
       radius = 4,
       speed = 0.1;
@@ -37,7 +37,7 @@
     y: h/2
   };
 
-  var colors = ["red", "white", "gold"];
+  var colors = ["red", "grey", "silver"];
 
   // clone object pos
   var accel = JSON.parse(JSON.stringify(pos));
@@ -56,8 +56,8 @@
     this.y = pos.y;
     this.radius = randomize(3,6);
     this.color = colors[Math.floor(Math.random() * colors.length)];
-    this.vx = randomize(-2, 2);
-    this.vy = randomize(5, 10);
+    this.vx = randomize(-10, 10);
+    this.vy = randomize(10, -10);
     this.life = randomize(20, 30);
   };
 
@@ -105,7 +105,7 @@
 
 body {
   overflow: hidden;
-  background: blue;
+  background: black
 }
 
 svg {
